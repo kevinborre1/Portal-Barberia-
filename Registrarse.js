@@ -1,5 +1,19 @@
-"use strict";
-function darBienvenida(nombre) {
-    return `¡Bienvenido a Portal Barber, ${nombre}!`;
-}
-console.log(darBienvenida("Cliente"));
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("modalRegistro");
+    const btnAbrir = document.getElementById("btnAbrirRegistro");
+    const spanCerrar = document.querySelector(".cerrar");
+
+    if (btnAbrir) {
+        btnAbrir.onclick = () => { modal.style.display = "block"; };
+    }
+    
+    if (spanCerrar) {
+        spanCerrar.onclick = () => { modal.style.display = "none"; };
+    }
+
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+});

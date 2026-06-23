@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberHub — El portal de las barberías</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<!-- Pon esto justo antes de la etiqueta </body> -->
+<script src="Registrarse.js"></script>
+
+<body>
+  <!-- seccion de navegacion nav -->
+  <nav>
+    <div class="nav-logo">
+      <div class="logo-icon">✂</div>
+      <span class="logo-text">Barber<span>Hub</span></span>
+    </div>
+    <div class="nav-search">
+      <input type="text" placeholder="Buscar barberías, barberos, looks...">
+    </div>
+    <div class="nav-actions">
+      <button class="nav-btn" title="Inicio">⌂</button>
+      <button class="nav-btn" title="Explorar">🧭</button>
+      <button class="nav-btn" title="Reservas">📅</button>
+      <button class="nav-btn" title="Mensajes">💬</button>
+      <button class="nav-btn" title="Notificaciones">🔔</button>
+      <button class="nav-avatar-btn" id="btnAbrirRegistro" title="Registrarse">
+        <div class="nav-avatar">MR</div>
+      </button>
+      <div id="modalRegistro" class="modal">
+        <div class="modal-contenido">
+          <span class="cerrar">&times;</span>
+          <h2>Crear cuenta</h2>
+          <form id="formRegistro">
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LAYOUT PRINCIPAL -->
+  <div class="layout">
+
+    <!-- ══ SIDEBAR IZQUIERDO ══ -->
+    <aside class="sidebar-left">
+
+      <div class="profile-card">
+        <div class="profile-banner"></div>
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar">👤</div>
+        </div>
+        <div class="profile-info">
+          <div class="profile-name">Mateo Rodríguez</div>
+          <div class="profile-handle">@mateo.cliente • Bs. As.</div>
+          <div class="profile-stats">
+            <div class="stat">
+              <span class="stat-num">12</span>
+              <span class="stat-label">Reservas</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">48</span>
+              <span class="stat-label">Seguidos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Reseñas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a class="menu-item active">
+          <span class="menu-icon">⌂</span> Inicio
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">🗺</span> Explorar cerca
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">📅</span> Mis reservas
+          <span class="menu-badge">2</span>
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">❤️</span> Guardados
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">⭐</span> Reseñas
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">🎁</span> Promociones
+          <span class="menu-badge">5</span>
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">⚙️</span> Configuración
+        </a>
+      </nav>
+
+      <div class="widget">
+        <div class="widget-title">Servicios populares</div>
+        <div class="services-grid">
+          <div class="service-pill">
+            <span class="service-emoji">✂️</span>
+            <span class="service-name">Corte clásico</span>
+          </div>
+          <div class="service-pill">
+            <span class="service-emoji">🧔</span>
+            <span class="service-name">Barba completa</span>
+          </div>
+          <div class="service-pill">
+            <span class="service-emoji">💈</span>
+            <span class="service-name">Afeitado navaja</span>
+          </div>
+          <div class="service-pill">
+            <span class="service-emoji">🎨</span>
+            <span class="service-name">Color &amp; diseño</span>
+          </div>
+          <div class="service-pill">
+            <span class="service-emoji">💆</span>
+            <span class="service-name">Masaje cráneo</span>
+          </div>
+          <div class="service-pill">
+            <span class="service-emoji">👦</span>
+            <span class="service-name">Corte niños</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ══ FEED ══ -->
+    <main class="feed">
+
+      <!-- Stories -->
+      <div class="stories-bar">
+        <div class="story story-add">
+          <div class="story-ring">
+            <div class="story-inner">＋</div>
+          </div>
+          <span class="story-name">Tu historia</span>
+        </div>
+        <div class="story">
+          <div class="story-ring">
+            <div class="story-inner">💈</div>
+          </div>
+          <span class="story-name">Barber King</span>
+        </div>
+        <div class="story">
+          <div class="story-ring">
+            <div class="story-inner">✂️</div>
+          </div>
+          <span class="story-name">El Navajero</span>
+        </div>
+        <div class="story">
+          <div class="story-ring">
+            <div class="story-inner">🧔</div>
+          </div>
+          <span class="story-name">Don Bernardo</span>
+        </div>
+        <div class="story">
+          <div class="story-ring visto">
+            <div class="story-inner">🪒</div>
+          </div>
+          <span class="story-name">The Fade Co.</span>
+        </div>
+        <div class="story">
+          <div class="story-ring visto">
+            <div class="story-inner">🎩</div>
+          </div>
+          <span class="story-name">Clásicos BA</span>
+        </div>
+      </div>
+
+      <!-- Nuevo post -->
+      <div class="new-post">
+        <div class="profile-avatar" style="width:36px;height:36px;font-size:16px;">👤</div>
+        <input class="new-post-input" type="text" placeholder="Compartí tu último look o reseñá una barbería...">
+        <div class="new-post-icons">
+          <button class="post-icon-btn" title="Foto">📷</button>
+          <button class="post-icon-btn" title="Reservar">📅</button>
+          <button class="post-icon-btn" title="Reseña">⭐</button>
+        </div>
+      </div>
+
+      <!-- POST 1 -->
+      <div class="post-card">
+        <div class="post-header">
+          <div class="post-avatar">💈</div>
+          <div class="post-meta">
+            <div class="post-author">Barber King — Palermo</div>
+            <div class="post-sub">@barberking.palermo · Barbería verificada ✓</div>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-image img-style-1">
+          <div class="post-image-overlay">
+            <span class="barber-emoji">✂️</span>
+          </div>
+          <span class="post-tag">Fade clásico</span>
+        </div>
+        <div class="post-actions">
+          <button class="action-btn liked"><span class="action-icon">❤️</span> 284</button>
+          <button class="action-btn"><span class="action-icon">💬</span> 31</button>
+          <button class="action-btn saved"><span class="action-icon">🔖</span></button>
+          <button class="action-btn book-btn">📅 Reservar turno</button>
+        </div>
+        <div class="post-body">
+          <div class="post-likes">284 me gusta</div>
+          <div class="post-text"><strong>Barber King</strong> Fresh fade con línea al razor. Disponibles turnos esta
+            semana — sin espera garantizada. 💈</div>
+          <div class="post-hashtags">
+            <span>#fade</span><span>#barbería</span><span>#palermo</span><span>#buenosaires</span>
+          </div>
+          <div class="post-time">hace 2 horas</div>
+        </div>
+      </div>
+
+      <!-- DIVIDER TIJERAS -->
+      <div class="scissors-divider">✂ ─ ─</div>
+
+      <!-- POST 2 -->
+      <div class="post-card">
+        <div class="post-header">
+          <div class="post-avatar" style="background: linear-gradient(135deg, #1a3d1a, #0d2a0d);">🧔</div>
+          <div class="post-meta">
+            <div class="post-author">Don Bernardo Barbershop</div>
+            <div class="post-sub">@donbernardo · San Telmo · <span class="avail-dot on"></span>Abierto ahora</div>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-image img-style-2">
+          <div class="post-image-overlay">
+            <span class="barber-emoji">🪒</span>
+          </div>
+          <span class="post-tag">Afeitado navaja</span>
+        </div>
+        <div class="post-actions">
+          <button class="action-btn"><span class="action-icon">❤️</span> 119</button>
+          <button class="action-btn"><span class="action-icon">💬</span> 14</button>
+          <button class="action-btn"><span class="action-icon">🔖</span></button>
+          <button class="action-btn book-btn">📅 Reservar turno</button>
+        </div>
+        <div class="post-body">
+          <div class="post-likes">119 me gusta</div>
+          <div class="post-text"><strong>Don Bernardo</strong> El arte del afeitado a la navaja no muere. Toalla
+            caliente, espuma artesanal y manos con 20 años de experiencia. 🏆</div>
+          <div class="post-hashtags">
+            <span>#navaja</span><span>#tradicional</span><span>#santelmo</span><span>#vintage</span>
+          </div>
+          <div class="post-time">hace 5 horas</div>
+        </div>
+      </div>
+
+      <!-- POST 3 -->
+      <div class="post-card">
+        <div class="post-header">
+          <div class="post-avatar" style="background: linear-gradient(135deg, #0d1a3d, #1a0d3d);">🎨</div>
+          <div class="post-meta">
+            <div class="post-author">The Fade Co. — Recoleta</div>
+            <div class="post-sub">@thefadeco · Recoleta · ⭐ 4.9</div>
+          </div>
+          <button class="post-more">···</button>
+        </div>
+        <div class="post-image img-style-3">
+          <div class="post-image-overlay">
+            <span class="barber-emoji">💈</span>
+          </div>
+          <span class="post-tag">Diseño artístico</span>
+        </div>
+        <div class="post-actions">
+          <button class="action-btn"><span class="action-icon">❤️</span> 432</button>
+          <button class="action-btn"><span class="action-icon">💬</span> 57</button>
+          <button class="action-btn"><span class="action-icon">🔖</span></button>
+          <button class="action-btn book-btn">📅 Reservar turno</button>
+        </div>
+        <div class="post-body">
+          <div class="post-likes">432 me gusta</div>
+          <div class="post-text"><strong>The Fade Co.</strong> Líneas, diseños y degradados. Cuando el pelo es el
+            lienzo. Consultá por turnos en DM o desde el botón de reserva. 🔥</div>
+          <div class="post-hashtags">
+            <span>#barberart</span><span>#fade</span><span>#diseño</span><span>#recoleta</span>
+          </div>
+          <div class="post-time">ayer</div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ══ SIDEBAR DERECHO ══ -->
+    <aside class="sidebar-right">
+
+      <div class="promo-banner">
+        <div class="promo-title">¿Tenés una barbería?</div>
+        <div class="promo-sub">Sumá tu local y llegá a miles de clientes en tu zona.</div>
+        <button class="promo-btn">✂ Publicar mi barbería</button>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">
+          Barberías destacadas
+          <a>Ver todas →</a>
+        </div>
+
+        <div class="barber-item">
+          <div class="barber-logo" style="background:#1a0d00;">💈</div>
+          <div class="barber-info">
+            <div class="barber-name">Barber King</div>
+            <div class="barber-meta">Palermo · <span class="avail-dot on"></span>Abierto</div>
+          </div>
+          <div class="barber-rating">⭐ 4.9</div>
+        </div>
+
+        <div class="barber-item">
+          <div class="barber-logo" style="background:#0d1a0d;">🧔</div>
+          <div class="barber-info">
+            <div class="barber-name">Don Bernardo</div>
+            <div class="barber-meta">San Telmo · <span class="avail-dot on"></span>Abierto</div>
+          </div>
+          <div class="barber-rating">⭐ 4.8</div>
+        </div>
+
+        <div class="barber-item">
+          <div class="barber-logo" style="background:#0d0d1a;">🎩</div>
+          <div class="barber-info">
+            <div class="barber-name">Clásicos BA</div>
+            <div class="barber-meta">Belgrano · <span class="avail-dot off"></span>Cierra 20hs</div>
+          </div>
+          <div class="barber-rating">⭐ 4.7</div>
+        </div>
+
+        <div class="barber-item">
+          <div class="barber-logo" style="background:#1a001a;">✂️</div>
+          <div class="barber-info">
+            <div class="barber-name">El Navajero</div>
+            <div class="barber-meta">Villa Crespo · <span class="avail-dot on"></span>Abierto</div>
+          </div>
+          <div class="barber-rating">⭐ 4.8</div>
+        </div>
+
+        <div class="barber-item">
+          <div class="barber-logo" style="background:#0d1a1a;">🪒</div>
+          <div class="barber-info">
+            <div class="barber-name">The Fade Co.</div>
+            <div class="barber-meta">Recoleta · <span class="avail-dot on"></span>Abierto</div>
+          </div>
+          <div class="barber-rating">⭐ 4.9</div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">
+          Trending 🔥
+          <a>Ver más</a>
+        </div>
+
+        <div class="trend-item">
+          <div class="trend-tag">#FadeClásico</div>
+          <div class="trend-count">1.2k publicaciones esta semana</div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-tag">#AfeiteNavaja</div>
+          <div class="trend-count">830 publicaciones</div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-tag">#BarbaBotánica</div>
+          <div class="trend-count">614 publicaciones</div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-tag">#BarberArt</div>
+          <div class="trend-count">2.1k publicaciones</div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-tag">#PalermoBarbershop</div>
+          <div class="trend-count">487 publicaciones</div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">Sugeridos para seguir</div>
+
+        <div class="barber-item">
+          <div class="barber-logo" style="background:#1a1000;">🏆</div>
+          <div class="barber-info">
+            <div class="barber-name">Guillermo Barbero</div>
+            <div class="barber-meta">Maestro barbero · 4.2k seguidores</div>
+          </div>
+          <button class="follow-btn">Seguir</button>
+        </div>
+
+        <div class="barber-item">
+          <div class="barber-logo" style="background:#001a1a;">💡</div>
+          <div class="barber-info">
+            <div class="barber-name">BarberStyle ARG</div>
+            <div class="barber-meta">Tendencias · 12k seguidores</div>
+          </div>
+          <button class="follow-btn">Seguir</button>
+        </div>
+
+        <div class="barber-item">
+          <div class="barber-logo" style="background:#1a001a;">🎓</div>
+          <div class="barber-info">
+            <div class="barber-name">Academia del Filo</div>
+            <div class="barber-meta">Cursos y técnica · 8.7k</div>
+          </div>
+          <button class="follow-btn">Seguir</button>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+
+</body>
+
+</html>
