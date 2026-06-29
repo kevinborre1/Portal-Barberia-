@@ -9,7 +9,162 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── ENHANCED VISUALS ── */
 
+    /* Real post images via Unsplash */
+    .post-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .post-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .post-card:hover .post-image img {
+      transform: scale(1.03);
+    }
+
+    /* Remove old gradient backgrounds */
+    .img-style-1, .img-style-2, .img-style-3 {
+      background: none;
+    }
+
+    /* Overlay gradient at bottom of image */
+    .post-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* Hide the big emoji on top of the photo */
+    .barber-emoji {
+      display: none;
+    }
+
+    /* Tag repositioned to bottom-left over image */
+    .post-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      z-index: 2;
+      background: rgba(13,13,13,0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(201,168,76,0.45);
+      color: var(--dorado);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Richer post card */
+    .post-card {
+      background: #141414;
+      border: 1px solid #252525;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .post-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      box-shadow: 0 0 0 1px rgba(201,168,76,0.1), 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    /* Story ring glow on hover */
+    .story:hover .story-ring:not(.visto) {
+      box-shadow: 0 0 12px rgba(201,168,76,0.5);
+    }
+
+    /* Richer profile banner */
+    .profile-banner {
+      background: linear-gradient(135deg, #3a1a00 0%, #8B1A1A 40%, #1a1000 80%, #0d0d0d 100%);
+    }
+
+    /* Promo banner richer */
+    .promo-banner {
+      background: linear-gradient(135deg, #1a0d00 0%, #3d1f00 50%, #1a1000 100%);
+      border: 1px solid rgba(201,168,76,0.4);
+      box-shadow: inset 0 1px 0 rgba(201,168,76,0.15);
+    }
+
+    /* Navbar subtle bottom glow */
+    nav {
+      box-shadow: 0 1px 0 #222, 0 2px 20px rgba(0,0,0,0.5);
+    }
+
+    /* Stories bar subtle upgrade */
+    .stories-bar {
+      background: #141414;
+      border: 1px solid #252525;
+    }
+
+    /* Modal upgrade */
+    .modal-contenido {
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.8);
+    }
+
+    .modal-contenido h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--dorado);
+    }
+
+    .modal-contenido form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .modal-contenido input {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: var(--hueso);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .modal-contenido input:focus {
+      border-color: var(--dorado);
+    }
+
+    .modal-contenido button[type="submit"] {
+      background: var(--dorado);
+      color: var(--negro);
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: background 0.2s;
+    }
+
+    .modal-contenido button[type="submit"]:hover {
+      background: #e0bc5a;
+    }
+  </style>
 </head>
 <!-- Pon esto justo antes de la etiqueta </body> -->
 <script src="Registrarse.js"></script>
@@ -150,31 +305,31 @@
         </div>
         <div class="story">
           <div class="story-ring">
-            <div class="story-inner">💈</div>
+            <div class="story-inner" style="background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=60&h=60&q=80&auto=format&fit=crop&crop=face') center/cover no-repeat;"></div>
           </div>
           <span class="story-name">Barber King</span>
         </div>
         <div class="story">
           <div class="story-ring">
-            <div class="story-inner">✂️</div>
+            <div class="story-inner" style="background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&q=80&auto=format&fit=crop&crop=face') center/cover no-repeat;"></div>
           </div>
           <span class="story-name">El Navajero</span>
         </div>
         <div class="story">
           <div class="story-ring">
-            <div class="story-inner">🧔</div>
+            <div class="story-inner" style="background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&q=80&auto=format&fit=crop&crop=face') center/cover no-repeat;"></div>
           </div>
           <span class="story-name">Don Bernardo</span>
         </div>
         <div class="story">
           <div class="story-ring visto">
-            <div class="story-inner">🪒</div>
+            <div class="story-inner" style="background: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=60&h=60&q=80&auto=format&fit=crop&crop=face') center/cover no-repeat;"></div>
           </div>
           <span class="story-name">The Fade Co.</span>
         </div>
         <div class="story">
           <div class="story-ring visto">
-            <div class="story-inner">🎩</div>
+            <div class="story-inner" style="background: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&q=80&auto=format&fit=crop&crop=face') center/cover no-repeat;"></div>
           </div>
           <span class="story-name">Clásicos BA</span>
         </div>
@@ -194,7 +349,7 @@
       <!-- POST 1 -->
       <div class="post-card">
         <div class="post-header">
-          <div class="post-avatar">💈</div>
+          <div class="post-avatar" style="background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=80&h=80&q=80&auto=format&fit=crop&crop=face') center/cover no-repeat; border: 2px solid #2a2a2a;"></div>
           <div class="post-meta">
             <div class="post-author">Barber King — Palermo</div>
             <div class="post-sub">@barberking.palermo · Barbería verificada ✓</div>
@@ -202,6 +357,7 @@
           <button class="post-more">···</button>
         </div>
         <div class="post-image img-style-1">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80&auto=format&fit=crop" alt="Fade clásico" loading="lazy">
           <div class="post-image-overlay">
             <span class="barber-emoji">✂️</span>
           </div>
@@ -230,7 +386,7 @@
       <!-- POST 2 -->
       <div class="post-card">
         <div class="post-header">
-          <div class="post-avatar" style="background: linear-gradient(135deg, #1a3d1a, #0d2a0d);">🧔</div>
+          <div class="post-avatar" style="background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&q=80&auto=format&fit=crop&crop=face') center/cover no-repeat; border: 2px solid #2a2a2a;"></div>
           <div class="post-meta">
             <div class="post-author">Don Bernardo Barbershop</div>
             <div class="post-sub">@donbernardo · San Telmo · <span class="avail-dot on"></span>Abierto ahora</div>
@@ -238,6 +394,7 @@
           <button class="post-more">···</button>
         </div>
         <div class="post-image img-style-2">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80&auto=format&fit=crop" alt="Afeitado navaja" loading="lazy">
           <div class="post-image-overlay">
             <span class="barber-emoji">🪒</span>
           </div>
@@ -263,7 +420,7 @@
       <!-- POST 3 -->
       <div class="post-card">
         <div class="post-header">
-          <div class="post-avatar" style="background: linear-gradient(135deg, #0d1a3d, #1a0d3d);">🎨</div>
+          <div class="post-avatar" style="background: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&q=80&auto=format&fit=crop&crop=face') center/cover no-repeat; border: 2px solid #2a2a2a;"></div>
           <div class="post-meta">
             <div class="post-author">The Fade Co. — Recoleta</div>
             <div class="post-sub">@thefadeco · Recoleta · ⭐ 4.9</div>
@@ -271,6 +428,7 @@
           <button class="post-more">···</button>
         </div>
         <div class="post-image img-style-3">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80&auto=format&fit=crop" alt="Diseño artístico" loading="lazy">
           <div class="post-image-overlay">
             <span class="barber-emoji">💈</span>
           </div>
