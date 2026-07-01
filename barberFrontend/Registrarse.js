@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const spanCerrar = document.querySelector(".cerrar");
 
     if (btnAbrir) {
-        btnAbrir.onclick = () => { modal.style.display = "block"; };
+        btnAbrir.onclick = () => { modal.style.display = "flex"; };
     }
     
     if (spanCerrar) {
