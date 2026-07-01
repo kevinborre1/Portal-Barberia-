@@ -32,20 +32,51 @@
       <button class="nav-avatar-btn" id="btnAbrirRegistro" title="Registrarse">
         <div class="nav-avatar">MR</div>
       </button>
-      <div id="modalRegistro" class="modal">
-        <div class="modal-contenido">
-          <span class="cerrar">&times;</span>
-          <h2>Crear cuenta</h2>
-          <form id="formRegistro">
-            <input type="text" placeholder="Nombre completo" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <input type="password" placeholder="Contraseña" required>
-            <button type="submit">Registrarse</button>
-          </form>
-        </div>
-      </div>
     </div>
   </nav>
+
+  <!-- El modal va FUERA del nav para que su position:fixed
+       tome como referencia toda la ventana y no el nav (que tiene backdrop-filter) -->
+  <div id="modalRegistro" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <h2>Crear cuenta</h2>
+      <form id="formRegistro">
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="password" placeholder="Contraseña" required>
+        <button type="submit">Registrarse</button>
+      </form>
+    </div>
+  </div>
+   
+  <aside class="sidebar-main"></aside>
+  <nav class="nav-menu">
+        <a class="menu-item active">
+          <span class="menu-icon">⌂</span> Inicio
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">🗺</span> Explorar cerca
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">📅</span> Mis reservas
+          <span class="menu-badge">2</span>
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">❤️</span> Guardados
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">⭐</span> Reseñas
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">🎁</span> Promociones
+          <span class="menu-badge">5</span>
+        </a>
+        <a class="menu-item">
+          <span class="menu-icon">⚙️</span> Configuración
+        </a>
+      </nav>
+      </aside>
 
   <!-- LAYOUT PRINCIPAL -->
   <div class="layout">
@@ -77,32 +108,6 @@
           </div>
         </div>
       </div>
-
-      <nav class="nav-menu">
-        <a class="menu-item active">
-          <span class="menu-icon">⌂</span> Inicio
-        </a>
-        <a class="menu-item">
-          <span class="menu-icon">🗺</span> Explorar cerca
-        </a>
-        <a class="menu-item">
-          <span class="menu-icon">📅</span> Mis reservas
-          <span class="menu-badge">2</span>
-        </a>
-        <a class="menu-item">
-          <span class="menu-icon">❤️</span> Guardados
-        </a>
-        <a class="menu-item">
-          <span class="menu-icon">⭐</span> Reseñas
-        </a>
-        <a class="menu-item">
-          <span class="menu-icon">🎁</span> Promociones
-          <span class="menu-badge">5</span>
-        </a>
-        <a class="menu-item">
-          <span class="menu-icon">⚙️</span> Configuración
-        </a>
-      </nav>
 
       <div class="widget">
         <div class="widget-title">Servicios populares</div>
